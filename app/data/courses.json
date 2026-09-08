@@ -1,0 +1,32 @@
+[
+    {
+        "id": 2,
+        "name": "naman",
+        "duration": "2 months",
+        "course_name": "mca"
+    },
+    {
+        "id": 3,
+        "name": "shivam",
+        "duration": "2 months",
+        "course_name": "mca"
+    },
+    {
+        "id": 4,
+        "name": "akshat",
+        "duration": "2 months",
+        "course_name": "mca"
+    },
+    {
+        "id": 5,
+        "name": "sagar",
+        "duration": "2 months",
+        "course_name": "mca"
+    },
+    {
+        "id": 6,
+        "name": "naveen",
+        "duration": "2 months",
+        "course_name": "mca"
+    }
+]

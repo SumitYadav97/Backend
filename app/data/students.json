@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "manvi",
+        "age": 20,
+        "city": "delhi"
+    },
+    {
+        "id": 2,
+        "name": "akshat",
+        "age": 20,
+        "city": "Tamil Nadu"
+    },
+    {
+        "id": 3,
+        "name": "sachin",
+        "age": 20,
+        "city": "uttrakhand"
+    },
+    {
+        "id": 4,
+        "name": "manav",
+        "age": 20,
+        "city": "gurgaon"
+    },
+    {
+        "id": 5,
+        "name": "Rohit",
+        "age": 20,
+        "city": "himachal"
+    },
+    {
+        "id": 6,
+        "name": "shivam",
+        "age": 20,
+        "city": "delhi"
+    },
+    {
+        "id": 7,
+        "name": "aditi",
+        "age": 20,
+        "city": "delhi"
+    },
+    {
+        "id": 8,
+        "name": "kalpana",
+        "age": 20,
+        "city": "delhi"
+    },
+    {
+        "id": 9,
+        "name": "gayitri",
+        "age": 20,
+        "city": "delhi"
+    },
+    {
+        "id": 10,
+        "name": "saloni",
+        "age": 20,
+        "city": "delhi"
+    }
+]

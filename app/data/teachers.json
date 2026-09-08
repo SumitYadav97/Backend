@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Santosh",
+        "subject": "hindi",
+        "experience": "2 years"
+    },
+    {
+        "id": 2,
+        "name": "mahesh",
+        "subject": "maths",
+        "experience": 3
+    },
+    {
+        "id": 3,
+        "name": "priyansh",
+        "subject": "maths",
+        "experience": 3
+    },
+    {
+        "id": 4,
+        "name": "shivam",
+        "subject": "maths",
+        "experience": 3
+    },
+    {
+        "id": 5,
+        "name": "aman",
+        "subject": "maths",
+        "experience": 3
+    }
+]
