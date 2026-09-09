@@ -5,7 +5,7 @@ from fastapi import Header, HTTPException
 FAKE_USERS = {
     "token-ava": {"name": "Ava", "role": "admin"},
     "token-leo": {"name": "Leo", "role": "student"},
-}
+} 
 
 
 def get_current_user(x_token: str = Header(...)):
