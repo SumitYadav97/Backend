@@ -15,7 +15,7 @@ router = APIRouter(
     tags=["Course"]
 )
 
-
+ 
 @router.get("/")
 def get_all_courses(
     current_user: dict = Depends(get_current_user)

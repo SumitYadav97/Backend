@@ -1,5 +1,4 @@
-from fastapi import APIRouter
-
+from fastapi import APIRouter, HTTPException, status
 from app.schemas.students_schemas import Student
 from app.services.students_services import (
     create_student,
@@ -8,7 +7,15 @@ from app.services.students_services import (
     update_student,
 )
 
-router = APIRouter(prefix="/students",tags=["students"])
+router = APIRouter(prefix="/students", tags=["students"])
+
+@router.post("/login")
+def login_student(credentials: dict):
+    username = credentials.get("username")
+    password = credentials.get("password")
+    
+    # TODO: Validate student credentials against your database service
+    return {"message": "Login successful", "access_token": "fake-jwt-token"}
 
 @router.get("/")
 def get_all_students():
