@@ -11,10 +11,10 @@ FAKE_USERS = {
 def get_current_user(x_token: str = Header(...)):
     user = FAKE_USERS.get(x_token)
 
-    if not user:
+    if not user: 
         raise HTTPException(
-            status_code=401,
+            status_code=401, 
             detail="Invalid token"
-        )
+        ) 
 
     return user

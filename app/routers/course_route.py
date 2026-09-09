@@ -14,7 +14,7 @@ router = APIRouter(
     prefix="/course", 
     tags=["Course"]
 )
-
+ 
  
 @router.get("/")
 def get_all_courses(
