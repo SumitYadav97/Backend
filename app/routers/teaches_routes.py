@@ -1,28 +1,41 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends, status
+from typing import List
+import pyodbc
 
-from app.schemas.teachers_schemas import Teacher
+from app.connection.connection import get_db
+from app.schemas.teachers_schemas import TeacherCreate, TeacherUpdate, TeacherResponse
 from app.services.teachers_services import (
+    get_all_teachers,
+    get_teacher_by_id,
     create_teacher,
-    delete_teacher,
-    get_teachers,
     update_teacher,
+    delete_teacher
 )
 
-router = APIRouter(prefix="/teachers",tags=["teachers"])
-
-@router.get("/")
-def get_all_teachers():
-    return get_teachers()
+#
+router = APIRouter(prefix="/teachers", tags=["Teachers"])
 
 
-@router.post("/")
-def add_teacher(teacher: Teacher):
-    return create_teacher(teacher)
+@router.get("/", response_model=List[TeacherResponse])
+def read_all(conn: pyodbc.Connection = Depends(get_db)):
+    return get_all_teachers(conn)
 
-@router.put("/")
-def update_teacher_route(teacher_id: int, teacher: Teacher):
-    return update_teacher(teacher_id, teacher)
 
-@router.delete("/")
-def delete_teacher_route(teacher_id: int):
-    return delete_teacher(teacher_id)
+@router.get("/{teacher_id}", response_model=TeacherResponse)
+def read_one(teacher_id: int, conn: pyodbc.Connection = Depends(get_db)):
+    return get_teacher_by_id(teacher_id, conn)
+
+
+@router.post("/", response_model=TeacherResponse, status_code=status.HTTP_201_CREATED)
+def create(data: TeacherCreate, conn: pyodbc.Connection = Depends(get_db)):
+    return create_teacher(data, conn)
+
+
+@router.put("/{teacher_id}", response_model=TeacherResponse)
+def update(teacher_id: int, data: TeacherUpdate, conn: pyodbc.Connection = Depends(get_db)):
+    return update_teacher(teacher_id, data, conn)
+
+
+@router.delete("/{teacher_id}")
+def delete(teacher_id: int, conn: pyodbc.Connection = Depends(get_db)):
+    return delete_teacher(teacher_id, conn)
