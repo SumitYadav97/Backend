@@ -12,7 +12,7 @@ from app.services.teachers_services import (
     delete_teacher
 )
 
-#
+
 router = APIRouter(prefix="/teachers", tags=["Teachers"])
 
 
@@ -21,7 +21,7 @@ def read_all(conn: pyodbc.Connection = Depends(get_db)):
     return get_all_teachers(conn)
 
 
-@router.get("/{teacher_id}", response_model=TeacherResponse)
+@router.get("/", response_model=TeacherResponse)
 def read_one(teacher_id: int, conn: pyodbc.Connection = Depends(get_db)):
     return get_teacher_by_id(teacher_id, conn)
 
@@ -31,11 +31,11 @@ def create(data: TeacherCreate, conn: pyodbc.Connection = Depends(get_db)):
     return create_teacher(data, conn)
 
 
-@router.put("/{teacher_id}", response_model=TeacherResponse)
+@router.put("/", response_model=TeacherResponse)
 def update(teacher_id: int, data: TeacherUpdate, conn: pyodbc.Connection = Depends(get_db)):
     return update_teacher(teacher_id, data, conn)
+ 
 
-
-@router.delete("/{teacher_id}")
+@router.delete("/")
 def delete(teacher_id: int, conn: pyodbc.Connection = Depends(get_db)):
     return delete_teacher(teacher_id, conn)

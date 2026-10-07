@@ -10,7 +10,7 @@ def get_all_teachers(conn: pyodbc.Connection):
             {
                 "TeacherID": r[0],
                 "Name": r[1],
-                "Subject": r[2],
+                "Subject": r[2], 
                 "Email": r[3],
                 "Phone": r[4],
                 "Salary": float(r[5]),
